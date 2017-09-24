@@ -10,7 +10,11 @@ Basic
     - email
     - password
 
-    Returns Token key
+    Returns Token key if successful.
+
+    In case of error returns an object which keys indicate the wrong field and values a message describing the error.
+
+    A possible key of the error object is also "non_field_errors" which indicate generic errors.
 
 - /rest-auth/logout/ (POST)
 
@@ -43,7 +47,9 @@ Basic
     - username
     - first_name
     - last_name
-
+    
+    Authentication is needed for this endpoint.
+    
     Returns pk, username, email, first_name, last_name
 
 
@@ -56,6 +62,12 @@ Registration
     - password1
     - password2
     - email
+    
+    Returns Token key if successful.
+    
+    In case of error return an object which keys indicate the wrong field and values a message describing the error.
+    
+    A possible key of the error object is also "non_field_errors" which indicate generic errors.
 
 - /rest-auth/registration/verify-email/ (POST)
 
